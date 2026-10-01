@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premkumar V | AI Developer | AI Engineer | Python Backend Developer</title>
+  <meta name="description" content="Portfolio of Premkumar V — AI Developer and Python Backend Developer specializing in LLMs, conversational AI, Machine Learning, and backend architectures.">
+
+  <!-- Google Fonts: Fraunces (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: {
+              50: '#FDFBF7',
+              100: '#FAF7F2',
+              200: '#F5F1E9',
+              300: '#E8E2D8',
+            },
+            warmYellow: {
+              DEFAULT: '#FDC844',
+              light: '#FEF3C7',
+              dark: '#D97706',
+            },
+            editorialBlue: '#38BDF8',
+            warmCoral: {
+              DEFAULT: '#F97316',
+              hover: '#EA580C',
+            }
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet with Micro-Animations -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FAF7F2] text-stone-900 font-sans antialiased selection:bg-[#FDC844] selection:text-stone-900">
+
+  <!-- 14. Thin Scroll Progress Indicator at top -->
+  <div id="scroll-progress"></div>
+
+  <!-- =========================================================================
+       1. NAVIGATION BAR
+       ========================================================================= -->
+  <header class="sticky top-0 z-50 nav-blur transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo with hand-drawn brand squiggle -->
+      <a href="#" class="group flex flex-col justify-center">
+        <span class="font-serif font-bold text-2xl tracking-tight text-stone-900 group-hover:text-amber-800 transition-colors">
+          Premkumar
+        </span>
+        <svg class="w-16 h-2 text-sky-400 -mt-1 transform group-hover:scale-x-110 transition-transform origin-left" viewBox="0 0 70 8" fill="none">
+          <path d="M2 5.5C18 1.5 48 1.5 68 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+
+      <!-- Desktop Nav Items with center-expand underline -->
+      <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-stone-600">
+        <a href="#about" class="nav-link hover:text-stone-950">About</a>
+        <a href="#current-work" class="nav-link hover:text-stone-950">What I'm Doing</a>
+        <a href="#featured-ai-project" class="nav-link hover:text-stone-950">Featured Project</a>
+        <a href="#experience" class="nav-link hover:text-stone-950">Experience</a>
+        <a href="#skills" class="nav-link hover:text-stone-950">Skills</a>
+        <a href="#contact" class="nav-link hover:text-stone-950">Contact</a>
+      </nav>
+
+      <!-- Pill CTA Button -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#contact" class="btn-pill-cta inline-flex items-center gap-2 bg-[#F97316] hover:bg-[#EA580C] text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm">
+          <span>Get in Touch</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-700 hover:text-stone-900 focus:outline-none" aria-label="Toggle navigation">
+        <i id="mobile-menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-6 border-b border-stone-200 bg-[#FAF7F2] space-y-3">
+      <a href="#about" class="block py-2 text-base font-medium text-stone-700 hover:text-stone-950">About</a>
+      <a href="#current-work" class="block py-2 text-base font-medium text-stone-700 hover:text-stone-950">What I'm Doing</a>
+      <a href="#featured-ai-project" class="block py-2 text-base font-medium text-stone-700 hover:text-stone-950">Featured Project</a>
+      <a href="#experience" class="block py-2 text-base font-medium text-stone-700 hover:text-stone-950">Experience</a>
+      <a href="#skills" class="block py-2 text-base font-medium text-stone-700 hover:text-stone-950">Skills</a>
+      <a href="#contact" class="block py-2 text-base font-medium text-stone-700 hover:text-stone-950">Contact</a>
+      <a href="#contact" class="inline-flex items-center justify-center w-full gap-2 bg-[#F97316] hover:bg-[#EA580C] text-white text-sm font-semibold px-5 py-2.5 rounded-full mt-2">
+        <span>Get in Touch</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. HERO SECTION (Editorial Reference Style & Micro-Animations)
+       ========================================================================= -->
+  <section class="relative pt-8 pb-20 md:pt-16 md:pb-28 overflow-hidden">
+    <!-- Subtle mouse parallax decorative accents -->
+    <div class="mouse-parallax absolute top-12 left-10 w-4 h-4 rounded-full bg-amber-300/40 pointer-events-none hidden lg:block" data-depth="0.6"></div>
+    <div class="mouse-parallax absolute top-40 right-16 w-6 h-6 rounded-full bg-sky-200/50 pointer-events-none hidden lg:block" data-depth="0.9"></div>
+    <div class="mouse-parallax absolute bottom-16 left-1/3 w-3 h-3 rounded-full bg-orange-300/40 pointer-events-none hidden lg:block" data-depth="0.4"></div>
+
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        
+        <!-- Left Column: Living Yellow Organic Shape + Floating Half-Body Portrait -->
+        <div class="lg:col-span-5 flex justify-center order-2 lg:order-1">
+          <div class="relative w-[320px] sm:w-[380px] md:w-[420px] h-[370px] sm:h-[430px] md:h-[460px] flex items-center justify-center">
+            
+            <!-- 3. Living Organic Yellow Backdrop Shape (Scales, breathes & rotates smoothly) -->
+            <div class="animate-hero-blob-entrance absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div class="animate-organic-blob relative w-[280px] sm:w-[340px] md:w-[370px] h-[280px] sm:h-[340px] md:h-[370px]">
+                
+                <!-- Main solid yellow circle with warm shadow -->
+                <div class="w-full h-full rounded-full bg-[#FDC844] shadow-[0_16px_40px_-10px_rgba(253,200,68,0.55)]"></div>
+
+                <!-- Speech-bubble triangle pointer on right side (pointing to text) -->
+                <div class="absolute right-[-18px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[18px] border-t-transparent border-b-[18px] border-b-transparent border-l-[28px] border-l-[#FDC844]"></div>
+
+                <!-- Decorative yellow accent arc on the left -->
+                <div class="absolute -left-6 -top-5 w-[116%] h-[116%] rounded-full border-[3.5px] border-dashed border-[#FDC844]/80 pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- 2. Floating Half-Body Profile Portrait (Full Face, both ears & broad shoulders) -->
+            <div class="animate-hero-portrait-entrance absolute inset-0 flex items-end justify-center z-10">
+              <div class="animate-profile-float relative w-[94%] h-[94%] flex items-end justify-center">
+                <!-- Half-Body Cutout Photo: Clean transparent background, full face, both ears, full textured hair -->
+                <img 
+                  src="assets/images/premkumar-cutout.png" 
+                  alt="Premkumar V — AI Developer" 
+                  class="w-full h-auto object-contain max-h-[105%] drop-shadow-lg"
+                />
+              </div>
+
+              <!-- Floating Status Pill on Avatar -->
+              <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 z-20 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-stone-200 shadow-md flex items-center gap-2 whitespace-nowrap">
+                <span class="pulse-dot"></span>
+                <span class="text-xs font-semibold text-stone-800">Currently Working @ TamilRootLabs.ai</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Editorial Greeting, Staggered Reveal & Animated Underline -->
+        <div class="lg:col-span-7 space-y-6 order-1 lg:order-2">
+          
+          <!-- Category Identity Pill -->
+          <div class="animate-hero-heading inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-900 text-xs sm:text-sm font-semibold">
+            <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i>
+            <span>AI Developer | AI Engineer | Python Backend Developer</span>
+          </div>
+
+          <!-- Main Greeting with Hand Waving & Hand-Drawn SVG Underline Animation -->
+          <div class="space-y-1">
+            <h1 class="animate-hero-heading font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-stone-900 leading-[1.15]">
+              <span class="relative inline-block">
+                Hey, I'm Premkumar
+                <!-- 4. Hand-drawn SVG underline stroke animation (900ms) -->
+                <svg class="absolute bottom-[-8px] left-0 w-full h-[14px] overflow-visible pointer-events-none" viewBox="0 0 280 14" fill="none">
+                  <path class="hero-underline-path" d="M4 8.5C70 3.5 170 3 276 9" stroke="#38BDF8" stroke-width="4.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="inline-block transform origin-bottom-right hover:rotate-12 transition-transform duration-200 cursor-default ml-1">👋</span>
+            </h1>
+          </div>
+
+          <!-- Hero Main Paragraph -->
+          <p class="animate-hero-desc text-xl sm:text-2xl text-stone-800 font-medium leading-relaxed">
+            I'm an AI Developer and Python Backend Developer building intelligent applications with LLMs, conversational AI, Machine Learning and backend technologies.
+          </p>
+
+          <!-- Current Work Callout Card (Visually prominent with badge) -->
+          <div class="animate-hero-card p-5 sm:p-6 rounded-2xl bg-[#FFFDF9] border-2 border-amber-200/90 shadow-sm relative overflow-hidden">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700 shrink-0 mt-0.5">
+                <i data-lucide="bot" class="w-5 h-5"></i>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    <span class="pulse-dot"></span>
+                    Currently Working
+                  </span>
+                  <span class="text-xs font-semibold text-stone-500">Freelance • 2026 – Present</span>
+                </div>
+                <p class="text-base sm:text-lg text-stone-900 font-semibold leading-snug">
+                  Currently building an LLM-powered two-way conversational chatbot at <span class="text-amber-800 underline decoration-amber-400 decoration-2">TamilRootLabs.ai</span>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTAs and Quick Links -->
+          <div class="animate-hero-cta pt-2 flex flex-wrap items-center gap-4">
+            <a href="#current-work" class="btn-arrow-hover inline-flex items-center gap-2 bg-stone-900 hover:bg-stone-800 text-white font-semibold px-6 py-3.5 rounded-full shadow hover:shadow-md transition-all text-sm sm:text-base">
+              <span>What I'm Working On Now</span>
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+
+            <a href="#featured-ai-project" class="inline-flex items-center gap-2 bg-white hover:bg-stone-50 text-stone-800 font-semibold px-6 py-3.5 rounded-full border border-stone-300 shadow-sm hover:border-stone-400 transition-all text-sm sm:text-base">
+              <i data-lucide="cpu" class="w-4 h-4 text-amber-600"></i>
+              <span>View Featured Chatbot</span>
+            </a>
+
+            <button class="copy-email-btn inline-flex items-center gap-2 text-stone-600 hover:text-stone-950 font-medium px-4 py-3 text-sm transition-colors" title="Copy email to clipboard">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+              <span>vpremkumar0113@gmail.com</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. "WHAT I'M WORKING ON NOW" SECTION
+       ========================================================================= -->
+  <section id="current-work" class="reveal-on-scroll py-20 bg-[#F5F1E9]/70 border-y border-stone-200">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mb-14 space-y-3">
+        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100/80 px-3 py-1 rounded-full">
+          <i data-lucide="activity" class="w-3.5 h-3.5"></i>
+          <span>Current Focus & Active Engineering</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900">
+          What I'm Working On Now
+        </h2>
+        <p class="text-stone-600 text-base sm:text-lg">
+          An editorial snapshot of my active development initiatives across LLM systems, backend infrastructure, and practical AI applications.
+        </p>
+      </div>
+
+      <!-- 7 & 8. What I'm Doing Cards with Animated Accent Lines -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 01: LLM Conversational AI (Green Accent Line) -->
+        <div class="warm-card p-8 flex flex-col justify-between relative group bg-white">
+          <div class="card-accent-line accent-line-green"></div>
+          <div class="space-y-4">
+            <div class="flex items-baseline justify-between">
+              <span class="number-step">01</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Active Freelance
+              </span>
+            </div>
+            
+            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-amber-800 transition-colors">
+              LLM Conversational AI
+            </h3>
+
+            <p class="text-lg font-serif italic text-stone-800 leading-snug">
+              "Building a two-way conversational chatbot using LLM technology."
+            </p>
+
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Designing natural user-AI conversational flows, prompt engineering pipelines, and testing dynamic two-way interactions with multilingual/Tamil support at TamilRootLabs.ai.
+            </p>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-stone-100 flex flex-wrap gap-1.5">
+            <span class="tag-pill ai-skill-glow"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-600"></i>LLM APIs</span>
+            <span class="tag-pill">Conversational Flows</span>
+            <span class="tag-pill ai-skill-glow">Prompt Engineering</span>
+            <span class="tag-pill">Multilingual NLP</span>
+          </div>
+        </div>
+
+        <!-- Card 02: Backend Engineering (Blue Accent Line) -->
+        <div class="warm-card p-8 flex flex-col justify-between relative group bg-white">
+          <div class="card-accent-line accent-line-blue"></div>
+          <div class="space-y-4">
+            <div class="flex items-baseline justify-between">
+              <span class="number-step">02</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                Active Internship
+              </span>
+            </div>
+            
+            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-amber-800 transition-colors">
+              Backend Engineering
+            </h3>
+
+            <p class="text-lg font-serif italic text-stone-800 leading-snug">
+              "Developing backend functionality using Python, Django, REST APIs and PostgreSQL."
+            </p>
+
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Architecting clean database schemas, building secure RESTful endpoints, and writing performant backend business logic during my internship at Chadhura Tech in Bengaluru.
+            </p>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-stone-100 flex flex-wrap gap-1.5">
+            <span class="tag-pill ai-skill-glow"><i data-lucide="terminal" class="w-3.5 h-3.5 text-blue-600"></i>Python</span>
+            <span class="tag-pill ai-skill-glow">Django</span>
+            <span class="tag-pill">REST APIs</span>
+            <span class="tag-pill">PostgreSQL</span>
+          </div>
+        </div>
+
+        <!-- Card 03: AI Application Development (Orange Accent Line) -->
+        <div class="warm-card p-8 flex flex-col justify-between relative group bg-white">
+          <div class="card-accent-line accent-line-orange"></div>
+          <div class="space-y-4">
+            <div class="flex items-baseline justify-between">
+              <span class="number-step">03</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                R&D & Engineering
+              </span>
+            </div>
+            
+            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-amber-800 transition-colors">
+              AI Application Development
+            </h3>
+
+            <p class="text-lg font-serif italic text-stone-800 leading-snug">
+              "Exploring practical applications of LLMs, NLP and intelligent automation."
+            </p>
+
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Evaluating real-world use cases for language models, semantic analysis, and automated workflows—focusing on reliable execution over superficial hype.
+            </p>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-stone-100 flex flex-wrap gap-1.5">
+            <span class="tag-pill ai-skill-glow"><i data-lucide="cpu" class="w-3.5 h-3.5 text-amber-600"></i>Pragmatic AI</span>
+            <span class="tag-pill">NLP Pipelines</span>
+            <span class="tag-pill">API Integration</span>
+            <span class="tag-pill">Automation</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. FEATURED AI PROJECT (TamilRootLabs.ai Work with Typing Preview)
+       ========================================================================= -->
+  <section id="featured-ai-project" class="reveal-on-scroll py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Section Label -->
+      <div class="flex items-center gap-3 mb-4">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="star" class="w-3.5 h-3.5 text-amber-600 fill-amber-500"></i>
+          Featured AI Project
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+          <span class="pulse-dot"></span>
+          Currently Building
+        </span>
+      </div>
+
+      <!-- Main Project Showcase Card -->
+      <div class="warm-card p-8 sm:p-12 bg-white relative overflow-hidden border-2 border-stone-300">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10">
+          
+          <!-- Left Col: Title, Overview & Responsibilities -->
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
+                TamilRootLabs.ai • Freelance AI Development
+              </div>
+              <h3 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight">
+                LLM Two-Way Conversational Chatbot
+              </h3>
+              <p class="font-serif text-xl sm:text-2xl text-stone-700 italic mt-3 leading-snug">
+                Building conversational AI experiences with LLM-powered two-way interaction.
+              </p>
+            </div>
+
+            <p class="text-stone-600 text-base sm:text-lg leading-relaxed">
+              At TamilRootLabs.ai, I am developing a two-way conversational chatbot that delivers structured, contextual dialogue between end users and the AI system. Rather than simple single-prompt completions, the system is designed to sustain multi-turn conversational context, guide the user through conversational flows, and integrate tightly with application workflows.
+            </p>
+
+            <!-- Key Engineering Responsibilities -->
+            <div class="space-y-3 pt-2">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-stone-500">
+                Core Development Responsibilities
+              </h4>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-sm text-stone-700">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0"></i>
+                  <span>Two-way conversational interaction design</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0"></i>
+                  <span>Conversational flow architecture</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0"></i>
+                  <span>LLM API orchestration & prompt engineering</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0"></i>
+                  <span>Tamil / Multilingual AI capabilities</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0"></i>
+                  <span>Response testing & behavior tuning</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0"></i>
+                  <span>Application workflow & backend integration</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Tech Tags -->
+            <div class="pt-4 border-t border-stone-200">
+              <div class="text-xs font-bold uppercase tracking-wider text-stone-500 mb-2.5">
+                Technologies & Architecture
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="tag-pill ai-skill-glow font-semibold">LLM</span>
+                <span class="tag-pill ai-skill-glow font-semibold">Conversational AI</span>
+                <span class="tag-pill font-semibold">Python</span>
+                <span class="tag-pill font-semibold">NLP</span>
+                <span class="tag-pill font-semibold">Prompt Engineering</span>
+                <span class="tag-pill font-semibold">API Integration</span>
+                <span class="tag-pill font-semibold">REST APIs</span>
+                <span class="tag-pill font-semibold">Backend Integration</span>
+              </div>
+            </div>
+
+            <!-- Honest Status Buttons -->
+            <div class="pt-4 flex flex-wrap items-center gap-4">
+              <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-stone-100 text-stone-700 text-sm font-semibold border border-stone-300">
+                <i data-lucide="lock" class="w-4 h-4 text-stone-500"></i>
+                <span>Private / In Development</span>
+              </div>
+              
+              <button id="open-chatbot-modal" class="inline-flex items-center gap-2 text-stone-900 hover:text-amber-800 font-semibold text-sm underline decoration-amber-400 decoration-2 transition-colors">
+                <span>View Engineering Breakdown</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Right Col: 9. Two-Way Animated Nodes + 10. LLM Typing Preview -->
+          <div class="lg:col-span-5 space-y-5">
+            
+            <!-- 9. Two-Way Connected AI Flow Visual (USER <-> LLM <-> AI RESPONSE) -->
+            <div class="bg-[#FAF7F2] p-5 rounded-2xl border border-stone-200 space-y-4">
+              <div class="flex items-center justify-between pb-2 border-b border-stone-200/80">
+                <span class="text-xs font-bold uppercase tracking-wider text-stone-700 flex items-center gap-1.5">
+                  <i data-lucide="repeat" class="w-3.5 h-3.5 text-amber-600"></i>
+                  Two-Way Conversational Flow
+                </span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">Live Architecture</span>
+              </div>
+
+              <!-- Flow Nodes and Connector with Travelling Pulse Dot -->
+              <div class="py-2">
+                <div class="flex items-center justify-between text-xs font-bold text-stone-800 mb-2">
+                  <div class="px-2.5 py-1 rounded-lg bg-white border border-stone-200 shadow-sm flex items-center gap-1.5">
+                    <i data-lucide="user" class="w-3.5 h-3.5 text-blue-600"></i>
+                    <span>User</span>
+                  </div>
+                  <div class="px-2.5 py-1 rounded-lg bg-amber-100 border border-amber-300 text-amber-900 shadow-sm flex items-center gap-1.5">
+                    <i data-lucide="cpu" class="w-3.5 h-3.5 text-amber-700"></i>
+                    <span>LLM Engine</span>
+                  </div>
+                  <div class="px-2.5 py-1 rounded-lg bg-white border border-stone-200 shadow-sm flex items-center gap-1.5">
+                    <i data-lucide="bot" class="w-3.5 h-3.5 text-emerald-600"></i>
+                    <span>AI Response</span>
+                  </div>
+                </div>
+
+                <!-- Animated Connection Line with Moving Pulse Dot -->
+                <div class="ai-flow-line rounded-full">
+                  <div class="ai-flow-dot"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 10. Realistic LLM Chat Typing Simulation -->
+            <div class="bg-[#FFFDF9] p-5 rounded-2xl border-2 border-amber-200/90 shadow-sm space-y-3">
+              <div class="flex items-center justify-between pb-2 border-b border-stone-200">
+                <div class="flex items-center gap-2">
+                  <span class="pulse-dot"></span>
+                  <span class="text-xs font-bold uppercase tracking-wider text-stone-800">Chatbot Interaction Preview</span>
+                </div>
+                <span class="text-xs text-stone-500 font-mono">multilingual</span>
+              </div>
+
+              <!-- Message 1 (User) -->
+              <div class="flex items-start gap-2.5 justify-end">
+                <div class="bg-stone-900 text-white text-xs px-3.5 py-2 rounded-2xl rounded-tr-sm max-w-[85%] shadow-sm">
+                  "Hello, can you help me?"
+                </div>
+                <div class="w-6 h-6 rounded-full bg-stone-200 flex items-center justify-center text-[10px] font-bold text-stone-700 shrink-0 mt-0.5">U</div>
+              </div>
+
+              <!-- Message 2 (AI Typing Response) -->
+              <div class="flex items-start gap-2.5">
+                <div class="w-6 h-6 rounded-full bg-amber-400 flex items-center justify-center text-[10px] font-bold text-stone-900 shrink-0 mt-0.5">AI</div>
+                <div class="bg-amber-50/90 border border-amber-200 text-stone-900 text-xs px-3.5 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] shadow-sm min-h-[38px] flex items-center">
+                  <span id="chat-ai-typing-text" class="font-medium text-stone-800"></span>
+                  <span id="chat-ai-cursor" class="blinking-cursor"></span>
+                </div>
+              </div>
+
+              <div class="pt-1 text-[11px] text-stone-500 flex items-center gap-1.5">
+                <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                <span>Context memory maintained across two-way user turns.</span>
+              </div>
+            </div>
+
+            <!-- Truthful Statement -->
+            <div class="p-3.5 rounded-xl bg-stone-100 border border-stone-200 text-xs text-stone-600 flex items-start gap-2.5">
+              <i data-lucide="info" class="w-4 h-4 text-stone-500 shrink-0 mt-0.5"></i>
+              <span>Engineering note: Focused on practical LLM application architecture, prompt engineering, and conversational flow logic rather than training models from scratch.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. ABOUT SECTION
+       ========================================================================= -->
+  <section id="about" class="reveal-on-scroll py-20 bg-[#F5F1E9]/70 border-t border-stone-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Photo Frame Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative max-w-sm">
+            <div class="p-4 bg-white rounded-2xl shadow-md border border-stone-200 rotate-1 hover:rotate-0 transition-transform duration-300">
+              <img 
+                src="assets/images/premkumar.jpg" 
+                alt="Premkumar V portrait" 
+                class="rounded-xl w-full h-[380px] object-cover object-top"
+              />
+              <div class="pt-4 pb-2 px-2 text-center">
+                <div class="font-serif font-bold text-xl text-stone-900">Premkumar V</div>
+                <div class="text-xs font-semibold text-stone-500 uppercase tracking-wider mt-0.5">AI Developer • Bengaluru, India</div>
+              </div>
+            </div>
+            <!-- Accent sticker note -->
+            <div class="absolute -bottom-4 -left-4 bg-[#FDC844] text-stone-900 px-4 py-2 rounded-xl shadow font-serif text-sm font-bold rotate-[-3deg]">
+              ✨ Practical AI Engineering
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Narrative & Biography -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full">
+            <i data-lucide="user" class="w-3.5 h-3.5"></i>
+            <span>About Premkumar</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight">
+            Bridging LLM Intelligence with Solid Backend Architecture
+          </h2>
+
+          <div class="space-y-4 text-stone-700 text-base sm:text-lg leading-relaxed">
+            <p class="font-medium text-stone-900 bg-white p-4 rounded-xl border-l-4 border-[#FDC844] shadow-sm">
+              "Alongside my backend development work, I currently work as a Freelance AI Developer with TamilRootLabs.ai, where I am working on an LLM-powered two-way conversational chatbot."
+            </p>
+
+            <p>
+              I am an AI Developer and Python Backend Developer passionate about turning Generative AI and Large Language Models into dependable, user-facing systems. Rather than relying on superficial demos, my focus is centered on reliable conversational design, prompt engineering rigor, and clean Python backend services.
+            </p>
+
+            <p>
+              My professional background combines hands-on backend development with Python, Django, REST APIs, and PostgreSQL with applied AI and machine learning internships. Whether designing two-way dialogue flows with Tamil/multilingual support or architecting performant API endpoints, I prioritize clarity, truthfulness, and maintainable engineering.
+            </p>
+          </div>
+
+          <!-- Quick facts grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-stone-200">
+            <div>
+              <div class="text-xs font-bold text-stone-500 uppercase tracking-wider">Primary Role</div>
+              <div class="font-serif font-bold text-stone-900 text-lg mt-0.5">AI Developer</div>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-stone-500 uppercase tracking-wider">Core Language</div>
+              <div class="font-serif font-bold text-stone-900 text-lg mt-0.5">Python & APIs</div>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-stone-500 uppercase tracking-wider">Location</div>
+              <div class="font-serif font-bold text-stone-900 text-lg mt-0.5">Bengaluru / Remote</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. EXPERIENCE SECTION (11. Animated Timeline Stem)
+       ========================================================================= -->
+  <section id="experience" class="reveal-on-scroll py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full">
+          <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+          <span>Career Journey</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900">
+          Professional Experience
+        </h2>
+        <p class="text-stone-600 text-base sm:text-lg">
+          Current AI development and backend engineering roles, followed by earlier internship experiences.
+        </p>
+      </div>
+
+      <!-- Experience Timeline Stack -->
+      <div class="space-y-8 relative">
+        <!-- 11. Timeline Stem (draws smoothly on scroll reveal) -->
+        <div class="timeline-stem-animated hidden sm:block"></div>
+        
+        <!-- 1. AI Developer — TamilRootLabs.ai (CURRENT ROLE 1) -->
+        <div class="warm-card p-7 sm:p-9 bg-white border-2 border-amber-300 shadow-md relative overflow-hidden sm:ml-8">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-300 shadow-sm">
+                <span class="pulse-dot"></span>
+                Currently Working
+              </span>
+              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-900">
+                Freelance | Remote
+              </span>
+            </div>
+            <span class="font-serif font-bold text-stone-700 text-sm sm:text-base">
+              2026 – Present
+            </span>
+          </div>
+
+          <div class="space-y-1 mb-4">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">
+              AI Developer — TamilRootLabs.ai
+            </h3>
+            <div class="text-sm font-semibold text-amber-800">
+              Role: AI Developer — Freelance
+            </div>
+          </div>
+
+          <p class="text-stone-700 font-medium text-base mb-5 leading-relaxed bg-[#FAF7F2] p-4 rounded-xl border border-stone-200">
+            I joined TamilRootLabs.ai as a Freelance AI Developer and am currently working on an LLM-powered conversational chatbot.
+          </p>
+
+          <div class="space-y-3 mb-6">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-stone-500">
+              Current Work Includes:
+            </h4>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-sm text-stone-700">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i>
+                <span>Developing an LLM-based conversational chatbot.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i>
+                <span>Working on two-way conversational interaction between user and AI.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i>
+                <span>Designing conversational flows for natural user-AI interaction.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i>
+                <span>Working with LLM APIs and prompt engineering.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i>
+                <span>Working on Tamil / multilingual conversational AI where applicable.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i>
+                <span>Testing chatbot responses and improving conversational behavior.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i>
+                <span>Integrating AI capabilities into an application workflow.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i>
+                <span>Debugging and improving chatbot functionality.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-5 border-t border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <div class="text-xs text-stone-500 font-semibold uppercase tracking-wider">Current Project & Category</div>
+              <div class="text-sm font-bold text-stone-900">LLM Two-Way Conversational Chatbot</div>
+              <div class="text-xs text-stone-600 mt-0.5">Generative AI • LLM • Conversational AI • NLP</div>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 max-w-md">
+              <span class="tag-pill ai-skill-glow">Python</span>
+              <span class="tag-pill ai-skill-glow">LLMs</span>
+              <span class="tag-pill ai-skill-glow">LLM APIs</span>
+              <span class="tag-pill">Prompt Engineering</span>
+              <span class="tag-pill">NLP</span>
+              <span class="tag-pill">REST APIs</span>
+              <span class="tag-pill">Backend Integration</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Backend Developer Intern — Chadhura Tech (CURRENT ROLE 2) -->
+        <div class="warm-card p-7 sm:p-9 bg-white border-2 border-blue-200 shadow-md relative overflow-hidden sm:ml-8">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-800 border border-blue-300 shadow-sm">
+                <span class="pulse-dot bg-blue-500"></span>
+                Present Role
+              </span>
+              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-stone-100 text-stone-800">
+                Bengaluru, India
+              </span>
+            </div>
+            <span class="font-serif font-bold text-stone-700 text-sm sm:text-base">
+              Present
+            </span>
+          </div>
+
+          <div class="space-y-1 mb-4">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">
+              Backend Developer Intern — Chadhura Tech
+            </h3>
+            <div class="text-sm font-semibold text-blue-800">
+              Bengaluru | Present
+            </div>
+          </div>
+
+          <p class="text-stone-700 text-base mb-5 leading-relaxed">
+            Developing core backend services and REST APIs to power business applications. Collaborating with cross-functional teams to implement efficient database querying and backend logic.
+          </p>
+
+          <ul class="space-y-2 text-sm text-stone-700 mb-6">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-blue-600 mt-0.5 shrink-0"></i>
+              <span>Building and maintaining RESTful APIs using Python and Django.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-blue-600 mt-0.5 shrink-0"></i>
+              <span>Designing database schemas and writing optimized queries with PostgreSQL.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-blue-600 mt-0.5 shrink-0"></i>
+              <span>Implementing business logic, request authentication, and endpoint data validation.</span>
+            </li>
+          </ul>
+
+          <div class="pt-5 border-t border-stone-200 flex flex-wrap gap-1.5">
+            <span class="tag-pill ai-skill-glow">Python</span>
+            <span class="tag-pill ai-skill-glow">Django</span>
+            <span class="tag-pill">REST APIs</span>
+            <span class="tag-pill">PostgreSQL</span>
+            <span class="tag-pill">Git</span>
+          </div>
+        </div>
+
+        <!-- 3. AI & Machine Learning Intern — Nimattooz Smile Mobility -->
+        <div class="warm-card p-7 sm:p-8 bg-white border border-stone-200 sm:ml-8">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+            <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-stone-100 text-stone-700">
+              Internship
+            </span>
+            <span class="text-xs font-semibold text-stone-500 uppercase tracking-wider">
+              Completed Internship
+            </span>
+          </div>
+
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-stone-900 mb-2">
+            AI & Machine Learning Intern — Nimattooz Smile Mobility
+          </h3>
+
+          <p class="text-stone-600 text-sm sm:text-base mb-4 leading-relaxed">
+            Applied machine learning methods to domain datasets. Focused on exploratory data understanding, preprocessing structured data, and training predictive models.
+          </p>
+
+          <div class="pt-4 border-t border-stone-100 flex flex-wrap gap-1.5">
+            <span class="tag-pill">Python</span>
+            <span class="tag-pill ai-skill-glow">Machine Learning</span>
+            <span class="tag-pill">Scikit-Learn</span>
+            <span class="tag-pill">Pandas</span>
+            <span class="tag-pill">NumPy</span>
+          </div>
+        </div>
+
+        <!-- 4. Data Science Intern — The Developers Arena -->
+        <div class="warm-card p-7 sm:p-8 bg-white border border-stone-200 sm:ml-8">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+            <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-stone-100 text-stone-700">
+              Internship
+            </span>
+            <span class="text-xs font-semibold text-stone-500 uppercase tracking-wider">
+              Completed Internship
+            </span>
+          </div>
+
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-stone-900 mb-2">
+            Data Science Intern — The Developers Arena
+          </h3>
+
+          <p class="text-stone-600 text-sm sm:text-base mb-4 leading-relaxed">
+            Conducted exploratory data analysis (EDA), data cleaning, and statistical analysis on diverse datasets to extract actionable engineering and business patterns.
+          </p>
+
+          <div class="pt-4 border-t border-stone-100 flex flex-wrap gap-1.5">
+            <span class="tag-pill">Python</span>
+            <span class="tag-pill">Data Science</span>
+            <span class="tag-pill">EDA</span>
+            <span class="tag-pill">Pandas</span>
+            <span class="tag-pill">Matplotlib</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. SKILLS & TECHNICAL EXPERTISE (12. Elegant Filterable Pills)
+       ========================================================================= -->
+  <section id="skills" class="reveal-on-scroll py-20 bg-[#F5F1E9]/70 border-t border-stone-200">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="max-w-xl space-y-3">
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full">
+            <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+            <span>Capabilities</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-stone-900">
+            Skills & Technical Stack
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base">
+            Grounded expertise in AI development, Python backend systems, machine learning, and developer tooling.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2">
+          <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-stone-900 text-white border border-stone-900 transition-all" data-filter="all">All Skills</button>
+          <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-stone-700 border border-stone-200 hover:border-stone-400 transition-all" data-filter="ai">AI & LLMs</button>
+          <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-stone-700 border border-stone-200 hover:border-stone-400 transition-all" data-filter="backend">Backend & APIs</button>
+          <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-stone-700 border border-stone-200 hover:border-stone-400 transition-all" data-filter="ml">ML & Data Science</button>
+        </div>
+      </div>
+
+      <!-- Skill Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Category 1: AI & Conversational AI -->
+        <div class="skill-item warm-card p-6 bg-white flex flex-col justify-between" data-category="ai">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center mb-4">
+              <i data-lucide="bot" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif font-bold text-xl text-stone-900 mb-2">AI & Conversational AI</h3>
+            <p class="text-xs text-stone-500 mb-4">LLM integration, two-way conversational systems, prompt engineering.</p>
+            <ul class="space-y-2 text-sm text-stone-700 font-medium">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>LLM APIs & Prompting</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Conversational Flow Design</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Two-Way Conversational Systems</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Tamil / Multilingual AI</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Response Testing & Behavior Tuning</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Category 2: Backend Development -->
+        <div class="skill-item warm-card p-6 bg-white flex flex-col justify-between" data-category="backend">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center mb-4">
+              <i data-lucide="server" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif font-bold text-xl text-stone-900 mb-2">Backend Development</h3>
+            <p class="text-xs text-stone-500 mb-4">Robust server-side architecture, REST APIs, and database design.</p>
+            <ul class="space-y-2 text-sm text-stone-700 font-medium">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Python</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Django Framework</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>RESTful API Design</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>PostgreSQL</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Backend Integration</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Category 3: Machine Learning & Data -->
+        <div class="skill-item warm-card p-6 bg-white flex flex-col justify-between" data-category="ml">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center mb-4">
+              <i data-lucide="line-chart" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif font-bold text-xl text-stone-900 mb-2">Machine Learning & Data</h3>
+            <p class="text-xs text-stone-500 mb-4">Predictive modeling, EDA, data cleansing, and metrics evaluation.</p>
+            <ul class="space-y-2 text-sm text-stone-700 font-medium">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Scikit-Learn</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Pandas & NumPy</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Exploratory Data Analysis (EDA)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Matplotlib & Seaborn</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Feature Engineering</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Category 4: Tools & Engineering Practices -->
+        <div class="skill-item warm-card p-6 bg-white flex flex-col justify-between" data-category="backend">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center mb-4">
+              <i data-lucide="terminal" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif font-bold text-xl text-stone-900 mb-2">Tools & Environments</h3>
+            <p class="text-xs text-stone-500 mb-4">Version control, API testing, debugging, and Linux workflows.</p>
+            <ul class="space-y-2 text-sm text-stone-700 font-medium">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>Git & GitHub</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>Postman (API Testing)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>Linux Environment & Shell</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>VS Code & Development Tools</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>Iterative Debugging</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. SELECTED TECHNICAL PROJECTS (Personal Projects)
+       ========================================================================= -->
+  <section id="projects" class="reveal-on-scroll py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="max-w-2xl mb-14 space-y-3">
+        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-stone-600 bg-stone-200/80 px-3 py-1 rounded-full">
+          <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+          <span>Personal & Academic Portfolio</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-stone-900">
+          Selected Technical Projects
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base">
+          Complementary personal and open exploration projects reflecting hands-on backend and ML skills.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Project 1: Django Backend API System -->
+        <div class="warm-card p-8 bg-white flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide bg-stone-100 text-stone-700">
+                Personal Project
+              </span>
+              <span class="text-xs text-stone-500 font-semibold">Backend Architecture</span>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-stone-900">
+              Django REST API & Database Service
+            </h3>
+
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Engineered modular REST API services using Python and Django REST Framework, featuring relational PostgreSQL schema modeling, JWT token authentication, and validated CRUD endpoints.
+            </p>
+
+            <ul class="space-y-1.5 text-xs text-stone-700">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-stone-500"></i>
+                <span>Database migration handling and query optimization</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-stone-500"></i>
+                <span>Clean API error handling and pagination support</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-stone-100 flex flex-wrap gap-1.5">
+            <span class="tag-pill">Python</span>
+            <span class="tag-pill">Django</span>
+            <span class="tag-pill">PostgreSQL</span>
+            <span class="tag-pill">REST APIs</span>
+          </div>
+        </div>
+
+        <!-- Project 2: ML Predictive Analytics Pipeline -->
+        <div class="warm-card p-8 bg-white flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide bg-stone-100 text-stone-700">
+                Personal Project
+              </span>
+              <span class="text-xs text-stone-500 font-semibold">Machine Learning</span>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-stone-900">
+              Predictive Modeling & Statistical Analysis Pipeline
+            </h3>
+
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Developed end-to-end data exploration and predictive modeling scripts in Python. Evaluated regression and classification performance across multiple validation benchmarks.
+            </p>
+
+            <ul class="space-y-1.5 text-xs text-stone-700">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-stone-500"></i>
+                <span>Exploratory data analysis & distribution visualization</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-stone-500"></i>
+                <span>Feature scaling, cross-validation, and metrics tracking</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-stone-100 flex flex-wrap gap-1.5">
+            <span class="tag-pill">Python</span>
+            <span class="tag-pill">Scikit-Learn</span>
+            <span class="tag-pill">Pandas</span>
+            <span class="tag-pill">Matplotlib</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. CONTACT & CONNECT SECTION (16. Direct Dispatch via Email & WhatsApp)
+       ========================================================================= -->
+  <section id="contact" class="reveal-on-scroll py-24 bg-[#F5F1E9]/80 border-t border-stone-200 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left: Editorial Contact Info Cards -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full">
+            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+            <span>Get In Touch</span>
+          </div>
+
+          <!-- Heading: "Let's Build Something Intelligent" -->
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight">
+            Let's Build Something Intelligent
+          </h2>
+
+          <p class="text-stone-700 text-base sm:text-lg leading-relaxed">
+            I am currently open for select freelance AI development engagements, LLM conversational chatbot implementations, and Python backend engineering projects.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <!-- Direct Email Card -->
+            <div class="p-4 bg-white rounded-2xl border border-stone-200 flex items-center justify-between gap-4 shadow-sm hover:border-amber-300 transition-colors">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-stone-500 font-semibold uppercase tracking-wider">Direct Email</div>
+                  <a href="mailto:vpremkumar0113@gmail.com" class="contact-link-animated text-sm font-bold text-stone-900 hover:text-amber-800 transition-colors">
+                    <span>vpremkumar0113@gmail.com</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                  </a>
+                </div>
+              </div>
+              <button class="copy-email-btn p-2 rounded-lg hover:bg-stone-100 text-stone-600 hover:text-stone-900 transition-colors" title="Copy email address">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Phone & WhatsApp Card (+91 6385382658) -->
+            <div class="p-4 bg-white rounded-2xl border border-stone-200 flex items-center justify-between gap-4 shadow-sm hover:border-emerald-300 transition-colors">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+                  <i data-lucide="phone-call" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-stone-500 font-semibold uppercase tracking-wider">Phone & WhatsApp</div>
+                  <div class="flex items-center gap-2 flex-wrap mt-0.5">
+                    <a href="tel:+916385382658" class="contact-link-animated text-sm font-bold text-stone-900 hover:text-emerald-700 transition-colors">
+                      <span>+91 6385382658</span>
+                      <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                    <a href="https://wa.me/916385382658" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition-colors">
+                      <i data-lucide="message-circle" class="w-3 h-3"></i>
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <button class="copy-phone-btn p-2 rounded-lg hover:bg-stone-100 text-stone-600 hover:text-stone-900 transition-colors" title="Copy phone number">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Location Card -->
+            <div class="p-4 bg-white rounded-2xl border border-stone-200 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-stone-500 font-semibold uppercase tracking-wider">Location</div>
+                <div class="text-sm font-bold text-stone-900">Bengaluru, India (Available for Remote Worldwide)</div>
+              </div>
+            </div>
+
+            <!-- Current Availability Card -->
+            <div class="p-4 bg-white rounded-2xl border border-stone-200 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+                <span class="pulse-dot"></span>
+              </div>
+              <div>
+                <div class="text-xs text-stone-500 font-semibold uppercase tracking-wider">Current Availability</div>
+                <div class="text-sm font-bold text-stone-900">Available for Freelance AI & Backend Opportunities</div>
+              </div>
+            </div>
+
+            <!-- 11. Quick Profiles: Email, LinkedIn, GitHub (Animated Underline & Icon Move) -->
+            <div class="p-4 bg-white/70 rounded-2xl border border-stone-200 flex items-center justify-between gap-3 flex-wrap">
+              <span class="text-xs font-bold text-stone-500 uppercase tracking-wider">Direct Profiles:</span>
+              <div class="flex items-center gap-4 text-xs font-bold flex-wrap">
+                <a href="mailto:vpremkumar0113@gmail.com" class="contact-link-animated text-stone-700 hover:text-amber-800">
+                  <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                  <span>Email</span>
+                </a>
+                <a href="https://linkedin.com/in/premkumar-v-ai" target="_blank" rel="noopener noreferrer" class="contact-link-animated text-stone-700 hover:text-blue-700">
+                  <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/premkumar-v" target="_blank" rel="noopener noreferrer" class="contact-link-animated text-stone-700 hover:text-stone-950">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Animated Editorial Contact Card -->
+        <div class="lg:col-span-7 relative">
+          
+          <!-- 12. Decorative elements around card (Hand-drawn curve, blue line, yellow dot) -->
+          <!-- Orange curve deco -->
+          <div class="orange-curve-deco absolute -top-5 -right-3 w-12 h-12 pointer-events-none hidden sm:block z-0" aria-hidden="true">
+            <svg viewBox="0 0 60 60" fill="none" class="w-full h-full text-[#F97316]/60">
+              <path d="M10 50 C 20 20, 45 15, 52 10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <!-- Tiny yellow dot deco -->
+          <div class="yellow-dot-deco absolute -top-2 -right-6 w-2.5 h-2.5 rounded-full bg-[#FDC844] shadow-sm pointer-events-none hidden sm:block z-0" aria-hidden="true"></div>
+          <!-- Small blue line deco -->
+          <div class="blue-line-deco absolute -bottom-5 -left-4 w-14 h-4 pointer-events-none hidden sm:block z-0" aria-hidden="true">
+            <svg viewBox="0 0 60 16" fill="none" class="w-full h-full text-[#38BDF8]/70">
+              <path d="M4 8 Q 30 2, 56 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <!-- 1, 2, 3, 4, 5. The Contact Card with Subtle Warm Light & Tactile Hover -->
+          <div id="contact-card" class="contact-card-editorial p-8 sm:p-10">
+            
+            <!-- 6. Heading Animation: "Let's Work Together" reveals first, then supporting text -->
+            <div class="mb-6">
+              <h3 class="contact-reveal-heading font-serif text-2xl sm:text-3xl font-bold text-stone-900 mb-2">Let's Work Together</h3>
+              <p class="contact-reveal-subtext text-sm sm:text-base text-stone-600">Have an AI project, LLM conversational chatbot, or Python backend challenge? Send a note below or reach out via WhatsApp.</p>
+            </div>
+
+            <!-- Delivery Method Selector (Email vs WhatsApp) -->
+            <div class="contact-field-stagger mb-5 p-1.5 bg-stone-100/90 rounded-2xl flex items-center gap-2">
+              <button type="button" id="method-email-btn" class="flex-1 py-2.5 px-3 rounded-xl text-xs font-bold transition-all bg-white text-stone-900 shadow-sm flex items-center justify-center gap-2">
+                <i data-lucide="mail" class="w-4 h-4 text-amber-600"></i>
+                <span>Send via Email</span>
+              </button>
+              <button type="button" id="method-whatsapp-btn" class="flex-1 py-2.5 px-3 rounded-xl text-xs font-bold transition-all text-stone-600 hover:text-stone-900 flex items-center justify-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+                <span>Send via WhatsApp (+91 6385382658)</span>
+              </button>
+            </div>
+
+            <form id="contact-form" class="space-y-4">
+              <input type="hidden" id="selected-delivery-method" value="email">
+
+              <!-- 7. Form Field Stagger: Your Name & Company Name -->
+              <div class="contact-field-stagger grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="contact-label" for="contact-name">Your Name</label>
+                  <input type="text" id="contact-name" required placeholder="e.g. Alex Morgan" class="contact-input">
+                </div>
+                <div>
+                  <label class="contact-label" for="contact-company">Company Name</label>
+                  <input type="text" id="contact-company" placeholder="e.g. TechCorp or Independent" class="contact-input">
+                </div>
+              </div>
+
+              <!-- 7. Form Field Stagger: Your Email / Mobile -->
+              <div class="contact-field-stagger">
+                <label class="contact-label" for="contact-info">Email or Mobile Number</label>
+                <input type="text" id="contact-info" required placeholder="name@company.com or +91 6385382658" class="contact-input">
+              </div>
+
+              <!-- 7. Form Field Stagger: Subject -->
+              <div class="contact-field-stagger">
+                <label class="contact-label" for="contact-subject">Subject / Inquiry Type</label>
+                <select id="contact-subject" class="contact-input text-stone-700">
+                  <option value="Freelance AI Development (LLMs & Chatbots)">Freelance AI Development (LLMs & Chatbots)</option>
+                  <option value="Python Backend Development (Django & REST APIs)">Python Backend Development (Django & REST APIs)</option>
+                  <option value="Machine Learning & Data Exploration">Machine Learning & Data Exploration</option>
+                  <option value="General Technical Inquiry">General Technical Inquiry</option>
+                </select>
+              </div>
+
+              <!-- 7. Form Field Stagger: Message -->
+              <div class="contact-field-stagger">
+                <label class="contact-label" for="contact-message">Message</label>
+                <textarea id="contact-message" rows="4" required placeholder="Tell me about your project, timeline, and goals..." class="contact-input"></textarea>
+              </div>
+
+              <!-- Feedback / Notification Banner -->
+              <div id="form-success" class="hidden p-4 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-medium flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                <span id="form-success-text">Opening message dispatch...</span>
+              </div>
+
+              <!-- 7 & 9. Form Field Stagger: Send Buttons -->
+              <div class="contact-field-stagger flex flex-col sm:flex-row items-center gap-3 pt-2">
+                <button type="submit" id="submit-btn" class="contact-send-btn w-full sm:flex-1 text-sm sm:text-base">
+                  <span id="submit-btn-text">Send Message</span>
+                  <span class="send-arrow-icon font-bold">→</span>
+                </button>
+                <a href="https://wa.me/916385382658" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3.5 px-5 rounded-full shadow hover:shadow-md transition-all text-sm sm:text-base whitespace-nowrap">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  <span>WhatsApp: +91 6385382658</span>
+                </a>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. FOOTER (17. Subtle Hand-Drawn Animated Line & Text)
+       ========================================================================= -->
+  <footer class="py-12 bg-white border-t border-stone-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand & Copyright -->
+      <div class="space-y-1.5 text-center sm:text-left">
+        <div class="font-serif font-bold text-xl text-stone-900 flex items-center justify-center sm:justify-start gap-1.5">
+          <span>Premkumar V</span>
+          <span class="text-xs px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-sans font-semibold">AI Developer</span>
+        </div>
+        <p class="text-xs text-stone-500">
+          AI Developer | AI Engineer | Python Backend Developer • Bengaluru, India
+        </p>
+        <!-- 17. Footer subtle text -->
+        <p class="text-xs text-stone-400 font-medium">
+          Built with curiosity, Python & AI. © 2026 Premkumar V.
+        </p>
+      </div>
+
+      <!-- Quick Nav Links in Footer -->
+      <div class="flex items-center gap-6 text-xs font-medium text-stone-600">
+        <a href="#about" class="hover:text-stone-900 transition-colors">About</a>
+        <a href="#current-work" class="hover:text-stone-900 transition-colors">Current Work</a>
+        <a href="#featured-ai-project" class="hover:text-stone-900 transition-colors">Chatbot Project</a>
+        <a href="#experience" class="hover:text-stone-900 transition-colors">Experience</a>
+        <a href="#contact" class="hover:text-stone-900 transition-colors">Contact</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       11. MODAL: DETAILED BREAKDOWN OF CHATBOT WORK (TamilRootLabs.ai)
+       ========================================================================= -->
+  <div id="chatbot-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-stone-200 max-h-[90vh] overflow-y-auto space-y-6">
+      <div class="flex items-start justify-between">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            Currently In Development
+          </span>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 mt-2">
+            LLM Two-Way Conversational Chatbot
+          </h3>
+          <p class="text-xs font-semibold text-amber-800 uppercase tracking-wider">
+            TamilRootLabs.ai • Freelance AI Developer
+          </p>
+        </div>
+        <button class="close-modal-btn p-2 rounded-full hover:bg-stone-100 text-stone-500 hover:text-stone-900">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-sm text-stone-700 leading-relaxed">
+        <p>
+          This project focuses on the architecture and development of an interactive two-way conversational system powered by Large Language Models (LLMs). The goal is to provide intuitive, context-aware user interactions while maintaining structured dialog bounds.
+        </p>
+
+        <div class="p-4 bg-[#FAF7F2] rounded-2xl border border-stone-200 space-y-2">
+          <div class="font-bold text-stone-900 text-sm">Key Architectural Pillars:</div>
+          <ul class="space-y-2 text-xs sm:text-sm">
+            <li class="flex items-start gap-2">
+              <strong class="text-amber-800 font-semibold shrink-0">Two-Way Interaction:</strong>
+              <span>Designing interactive conversational loops where the system not only answers but prompts clarifications and guides user inquiries.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <strong class="text-amber-800 font-semibold shrink-0">Conversational Flows:</strong>
+              <span>Building structured pathways that prevent open-ended confusion while preserving natural language flexibility.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <strong class="text-amber-800 font-semibold shrink-0">Prompt Engineering:</strong>
+              <span>Crafting strict prompt guidelines, role definitions, and few-shot examples for deterministic API responses.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <strong class="text-amber-800 font-semibold shrink-0">Multilingual & Tamil AI:</strong>
+              <span>Testing and implementing multilingual conversational handling with particular focus on Tamil language interaction where required.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <strong class="text-amber-800 font-semibold shrink-0">Backend Integration:</strong>
+              <span>Linking LLM API responses into Python backend services and REST endpoints for seamless application workflow execution.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs text-stone-800">
+          <strong>Access Status:</strong> As this is an ongoing client project at TamilRootLabs.ai, repository source code and live deployments remain private and in active development.
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-stone-200 flex justify-end">
+        <button class="close-modal-btn px-6 py-2.5 rounded-full bg-stone-900 text-white font-semibold text-sm hover:bg-stone-800 transition-colors">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       12. TOAST NOTIFICATION
+       ========================================================================= -->
+  <div id="toast" class="bg-stone-900 text-white px-5 py-3.5 rounded-2xl shadow-xl flex items-center gap-3 border border-stone-700">
+    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 shrink-0"></i>
+    <span id="toast-text" class="text-sm font-medium">Notification message</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

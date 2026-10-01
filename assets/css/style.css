@@ -1,0 +1,811 @@
+/* ==========================================================================
+   Premkumar V — Portfolio Stylesheet
+   Editorial Aesthetic inspired by Ali Abdaal's warm personal brand:
+   Warm cream backdrop, elegant Fraunces serif headings, crisp Plus Jakarta Sans,
+   living organic shapes, and purposeful, premium micro-animations.
+   ========================================================================== */
+
+:root {
+  --bg-cream: #FAF7F2;
+  --bg-card: #FFFFFF;
+  --bg-card-subtle: #F5F1E9;
+  --text-primary: #18181B;
+  --text-secondary: #52525B;
+  --text-muted: #71717A;
+  --accent-yellow: #FDC844;
+  --accent-yellow-light: #FEF3C7;
+  --accent-yellow-dark: #D97706;
+  --accent-cyan: #38BDF8;
+  --accent-coral: #F97316;
+  --accent-coral-hover: #EA580C;
+  --accent-green: #10B981;
+  --border-subtle: #E8E2D8;
+  --border-strong: #D6CEBF;
+  --shadow-warm: 0 10px 30px -10px rgba(180, 140, 75, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 22px 40px -12px rgba(180, 140, 75, 0.22), 0 8px 20px -4px rgba(0, 0, 0, 0.06);
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg-cream);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Serif font utility */
+.font-editorial {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+/* Custom warm scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: #D6CEBF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A89F8E;
+}
+
+/* 14. Scroll Progress Indicator */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #FDC844 0%, #38BDF8 50%, #F97316 100%);
+  width: 0%;
+  z-index: 100;
+  transition: width 0.1s ease-out;
+}
+
+/* Sticky Header styling */
+.nav-blur {
+  background: rgba(250, 247, 242, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* 5. Navbar Micro-Interactions */
+.nav-link {
+  position: relative;
+  transition: color 0.25s var(--ease-editorial);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-cyan);
+  border-radius: 2px;
+  transition: transform 0.3s var(--ease-editorial);
+  transform-origin: center;
+}
+
+.nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.btn-pill-cta {
+  transition: transform 0.25s var(--ease-editorial), box-shadow 0.25s var(--ease-editorial);
+}
+
+.btn-pill-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px -4px rgba(249, 115, 22, 0.35);
+}
+
+/* 1. Hero Entrance Keyframes & Classes */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroBlobEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes heroPortraitEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-hero-heading {
+  animation: heroFadeUp 0.8s var(--ease-editorial) 0.1s both;
+}
+
+.animate-hero-desc {
+  animation: heroFadeUp 0.8s var(--ease-editorial) 0.3s both;
+}
+
+.animate-hero-card {
+  animation: heroFadeUp 0.8s var(--ease-editorial) 0.45s both;
+}
+
+.animate-hero-cta {
+  animation: heroFadeUp 0.8s var(--ease-editorial) 0.6s both;
+}
+
+.animate-hero-blob-entrance {
+  animation: heroBlobEntrance 1.2s var(--ease-editorial) 0.1s both;
+}
+
+.animate-hero-portrait-entrance {
+  animation: heroPortraitEntrance 0.95s var(--ease-editorial) 0.25s both;
+}
+
+/* 2. Profile Image Float Animation (4.5s infinite loop, subtle) */
+@keyframes profileFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-profile-float {
+  animation: profileFloat 4.6s ease-in-out infinite;
+}
+
+/* 3. Organic Background Shape Living Movement (8–12s alternate) */
+@keyframes organicBlobBreathe {
+  0% {
+    transform: scale(1) rotate(0deg) translate(0, 0);
+  }
+  33% {
+    transform: scale(1.025) rotate(1.2deg) translate(2px, -3px);
+  }
+  66% {
+    transform: scale(0.985) rotate(-1deg) translate(-2px, 2px);
+  }
+  100% {
+    transform: scale(1.02) rotate(0.8deg) translate(1px, -2px);
+  }
+}
+
+.animate-organic-blob {
+  animation: organicBlobBreathe 10s ease-in-out infinite alternate;
+}
+
+/* 4. Hand-Drawn Underline SVG Animation (900ms stroke-draw) */
+.hero-underline-path {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: drawStroke 0.9s var(--ease-editorial) 0.85s forwards;
+}
+
+@keyframes drawStroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* 6. Scroll Reveal Classes (IntersectionObserver) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.85s var(--ease-editorial), transform 0.85s var(--ease-editorial);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 7 & 8. What I'm Doing Cards & Animated Accent Lines */
+.warm-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-warm);
+  transition: transform 0.35s var(--ease-editorial), box-shadow 0.35s var(--ease-editorial), border-color 0.35s var(--ease-editorial);
+  position: relative;
+  overflow: hidden;
+}
+
+.warm-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-strong);
+}
+
+/* Number step movement */
+.number-step {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 2.75rem;
+  line-height: 1;
+  color: #D6CEBF;
+  transition: transform 0.35s var(--ease-editorial), color 0.35s var(--ease-editorial);
+  display: inline-block;
+}
+
+.warm-card:hover .number-step {
+  transform: translateY(-3px) scale(1.04);
+  color: var(--accent-yellow-dark);
+}
+
+/* Card top accent line expanding on hover (Green, Blue, Orange) */
+.card-accent-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  width: 0%;
+  transition: width 0.38s var(--ease-editorial);
+  border-radius: 4px 4px 0 0;
+}
+
+.warm-card:hover .card-accent-line {
+  width: 100%;
+}
+
+.accent-line-green {
+  background-color: var(--accent-green);
+}
+
+.accent-line-blue {
+  background-color: var(--accent-cyan);
+}
+
+.accent-line-orange {
+  background-color: var(--accent-coral);
+}
+
+/* 9. Two-Way AI Conversational Flow Animation */
+.ai-flow-line {
+  position: relative;
+  background: #E8E2D8;
+  height: 2px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ai-flow-dot {
+  position: absolute;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-yellow-dark);
+  box-shadow: 0 0 8px rgba(253, 200, 68, 0.8);
+  animation: flowDot 3.2s ease-in-out infinite;
+}
+
+@keyframes flowDot {
+  0% { left: 0%; transform: scale(0.8); }
+  50% { left: 95%; transform: scale(1.2); }
+  100% { left: 0%; transform: scale(0.8); }
+}
+
+/* 10. LLM Chat Blinking Cursor */
+.blinking-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background-color: var(--accent-coral);
+  margin-left: 2px;
+  vertical-align: -2px;
+  animation: blink 0.9s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 11. Experience Timeline Animation */
+.timeline-stem-animated {
+  position: absolute;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  width: 2.5px;
+  background: linear-gradient(to bottom, #FDC844 0%, #38BDF8 60%, rgba(214, 206, 191, 0.3) 100%);
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 1.2s var(--ease-editorial);
+}
+
+.is-revealed .timeline-stem-animated {
+  transform: scaleY(1);
+}
+
+@media (min-width: 768px) {
+  .timeline-stem-animated {
+    left: 2rem;
+  }
+}
+
+/* 12. Skills Pills Animation */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background: var(--bg-card-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  transition: transform 0.25s var(--ease-editorial), background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tag-pill:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  background: #ECE6DB;
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.05);
+}
+
+.tag-pill:hover i {
+  transform: translateX(2px);
+}
+
+.tag-pill i {
+  transition: transform 0.25s var(--ease-editorial);
+}
+
+/* AI Skill Emphasis pulse */
+.ai-skill-glow {
+  position: relative;
+  background: #FFFDF8;
+  border-color: #FDE68A;
+  color: #92400E;
+}
+
+.ai-skill-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 9999px;
+  border: 1px solid rgba(253, 200, 68, 0.4);
+  animation: pulseAiSkill 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseAiSkill {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.03); }
+}
+
+/* 16. Contact Button Arrow Movement */
+.btn-arrow-hover i {
+  transition: transform 0.25s var(--ease-editorial);
+}
+
+.btn-arrow-hover:hover i {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   CONTACT CARD & FORM EDITORIAL ANIMATIONS
+   ========================================================================== */
+
+/* 1, 2, 3, 4. Contact Card Entrance, Border Reveal, Shadow, and Tactile Hover */
+.contact-card-editorial {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 1.5rem;
+  border: 1px solid transparent;
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  box-shadow: 0 4px 12px -2px rgba(180, 140, 75, 0.04);
+  overflow: hidden;
+  transition: 
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s,
+    box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, border-color, box-shadow;
+}
+
+.contact-card-editorial.card-entered {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-warm);
+}
+
+/* 4. Card Hover: moves upward ~4px, scales very slightly (1.005), deeper shadow */
+.contact-card-editorial.card-entered:hover {
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: 0 20px 40px -12px rgba(180, 140, 75, 0.18), 0 8px 18px -4px rgba(0, 0, 0, 0.05);
+  border-color: var(--border-strong);
+  transition: 
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+/* 5. Subtle Gradient / Warm Light Movement inside card (8-10s infinite) */
+.contact-card-editorial::before {
+  content: '';
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle 380px at 15% 15%, rgba(253, 200, 68, 0.07), rgba(249, 115, 22, 0.025) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  animation: subtleWarmLight 9s ease-in-out infinite alternate;
+}
+
+@keyframes subtleWarmLight {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(32%, 8%);
+    opacity: 0.55;
+  }
+}
+
+/* Ensure inner card content is above the subtle warm light */
+.contact-card-editorial > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 6. Heading & Subtitle Reveal Animation */
+.contact-reveal-heading {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s,
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+}
+
+.contact-reveal-subtext {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s,
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+
+.card-entered .contact-reveal-heading,
+.card-entered .contact-reveal-subtext {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 7. Form Field Stagger (80–120ms stagger) */
+.contact-field-stagger {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-entered .contact-field-stagger:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 240ms;
+}
+
+.card-entered .contact-field-stagger:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 340ms;
+}
+
+.card-entered .contact-field-stagger:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 440ms;
+}
+
+.card-entered .contact-field-stagger:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 540ms;
+}
+
+.card-entered .contact-field-stagger:nth-child(5) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 640ms;
+}
+
+.card-entered .contact-field-stagger:nth-child(6) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 740ms;
+}
+
+/* 8. Input Hover & Focus */
+.contact-input {
+  background-color: #FAF8F5;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  border-radius: 0.75rem;
+  padding: 0.8rem 1rem;
+  font-size: 0.875rem;
+  width: 100%;
+  transition: border-color 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.contact-input:hover {
+  border-color: var(--border-strong);
+  background-color: #FFFFFF;
+}
+
+.contact-input:focus {
+  outline: none;
+  background-color: #FFFFFF;
+  border-color: var(--accent-coral);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.14);
+}
+
+/* Stable Label */
+.contact-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #44403C;
+  margin-bottom: 0.375rem;
+  transform: none !important;
+}
+
+/* 9. Send Button Interaction */
+.contact-send-btn {
+  background-color: var(--accent-coral);
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.875rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px -3px rgba(249, 115, 22, 0.35);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.contact-send-btn:hover {
+  background-color: var(--accent-coral-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(249, 115, 22, 0.45);
+}
+
+.contact-send-btn:hover .send-arrow-icon {
+  transform: translateX(5px);
+}
+
+.contact-send-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px -2px rgba(249, 115, 22, 0.3);
+}
+
+.send-arrow-icon {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 10. Brief arrow launch animation on submit */
+.arrow-launching .send-arrow-icon {
+  animation: arrowLaunch 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes arrowLaunch {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+/* 11. Contact Links with Left-to-Right Underline & 2px Icon Shift */
+.contact-link-animated {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding-bottom: 2px;
+}
+
+.contact-link-animated::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--accent-coral);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-link-animated:hover {
+  color: var(--accent-coral);
+}
+
+.contact-link-animated:hover::after {
+  transform: scaleX(1);
+}
+
+.contact-link-animated:hover i,
+.contact-link-animated:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.contact-link-animated i,
+.contact-link-animated svg {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 12. Decorative elements around contact card */
+.orange-curve-deco {
+  animation: slowCurveRotate 8s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes slowCurveRotate {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(6deg); }
+}
+
+.blue-line-deco {
+  animation: slowLineMove 7.5s ease-in-out infinite;
+}
+
+@keyframes slowLineMove {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(7px); }
+}
+
+.yellow-dot-deco {
+  animation: slowDotFloat 6s ease-in-out infinite;
+}
+
+@keyframes slowDotFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Pulsing Badge Indicator */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-green);
+  position: relative;
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  background-color: rgba(16, 185, 129, 0.4);
+  animation: pulse-ring 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  50% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(0.6); opacity: 0; }
+}
+
+/* Toast message animation */
+#toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  transform: translateY(120%);
+  opacity: 0;
+  transition: transform 0.35s var(--ease-editorial), opacity 0.3s ease;
+}
+
+#toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-backdrop {
+  background: rgba(24, 24, 27, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+/* 14 & 18. Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .contact-card-editorial {
+    opacity: 1 !important;
+    transform: none !important;
+    border-color: var(--border-subtle) !important;
+    transition: opacity 0.2s ease !important;
+  }
+  .contact-card-editorial::before,
+  .orange-curve-deco,
+  .blue-line-deco,
+  .yellow-dot-deco {
+    animation: none !important;
+  }
+  .contact-field-stagger,
+  .contact-reveal-heading,
+  .contact-reveal-subtext {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .contact-send-btn:hover,
+  .contact-send-btn:hover .send-arrow-icon {
+    transform: none !important;
+  }
+  .hero-underline-path {
+    stroke-dashoffset: 0 !important;
+  }
+  .animate-profile-float, .animate-organic-blob {
+    animation: none !important;
+  }
+}
